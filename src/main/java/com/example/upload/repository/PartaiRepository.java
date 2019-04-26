@@ -15,6 +15,5 @@ import org.springframework.stereotype.Repository;
 @Transactional
 @Repository
 public interface PartaiRepository extends JpaRepository<Partai, Integer>{
-    @Query("SELECT u FROM Partai u where namaPartai = ?1")
-    public List<Partai> findByNama(String namaPartai);
+    
 }
