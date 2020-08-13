@@ -48,4 +48,12 @@ public class PartaiController {
         fileStorageService.storeFile(partai.getFile());
         return "redirect:/";
     }
+    
+    @GetMapping("getFile")
+    public String homeFile(Model model){
+        model.addAttribute("partai", new Partai());
+        List<JumlahSuara> jmlSuara = jmlSuaraService.getJumlahSuara();
+        model.addAttribute("partais", jmlSuara);
+        return "view/partai";
+    }
 }
